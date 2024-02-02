@@ -31,7 +31,7 @@ library(mapview)
 
 ```
 
-## Load data
+## Load data from OpenDataPhilly
 Next we load our dataset from OpenDataPhilly.org. This dataset is a GeoJSON of all the parks in Philadelphia. We use sf::st_read() to read in spatial data like this.
 ```{r load data, include = FALSE}
 parks <- st_read("https://opendata.arcgis.com/datasets/d52445160ab14380a673e5849203eb64_0.geojson")
@@ -47,6 +47,6 @@ Finally, let's map using ggplot2. Add your name as a subtitle in the labs() func
 ```{r map data}
 ggplot() +
   geom_sf(data = parks, fill = "chartreuse4", color = "transparent") +
-  labs(title = "Philadelphia Park System, 2023") + 
+  labs(title = "Philadelphia Park System, 2023") +
   theme_void()
 ```
